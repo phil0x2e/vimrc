@@ -18,6 +18,9 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,7 +49,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 
 " vim-airline
-
 let g:airline_powerline_fonts = 1
 
 " Config
