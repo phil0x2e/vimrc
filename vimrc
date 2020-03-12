@@ -58,9 +58,7 @@ set nu
 set relativenumber
 set tabstop=4
 set shiftwidth=4
-"color darkspectrum
 set autoindent
-"highlight Normal ctermfg=white ctermbg=blue
 :set ignorecase
 :set smartcase
 
@@ -68,4 +66,4 @@ nnoremap ,t :NERDTree<CR>
 
 "Nerdtree Arrows not showing.
 let g:NERDTreeDirArrowExpandable = "+"
-let g:NERDTreeDirArrowCollapsible = "~"
+let g:NERDTreeDirArrowCollapsible = "-"
