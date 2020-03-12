@@ -1,4 +1,4 @@
-" Vundle
+" ==================== Vundle ====================
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -22,6 +22,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -51,20 +52,48 @@ let g:syntastic_enable_signs = 1
 
 " vim-airline
 let g:airline_powerline_fonts = 1
-
-" Config
-
-syntax on
-set nu
-set relativenumber
-set tabstop=4
-set shiftwidth=4
-set autoindent
-set ignorecase
-set smartcase
-
-nnoremap ,t :NERDTree<CR>
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 "Nerdtree Arrows as + and -
 let g:NERDTreeDirArrowExpandable = "+"
 let g:NERDTreeDirArrowCollapsible = "-"
+
+" ==================== Config ====================
+
+set nu
+set relativenumber
+set tabstop=4
+set smarttab
+set shiftwidth=4
+set autoindent
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set background=dark
+"set termguicolors " disable when using urxvt!
+
+colorscheme gruvbox
+syntax on
+
+" Enable mouse in normal mode
+set mouse=n
+
+" ==================== Maps ====================
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+" which is the default
+map Y y$
+nnoremap ,t :NERDTree<CR>
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+" Remove trailing whitespaces for specific files
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre *.h,*.c,*.java,*.py,*.rs,*.toml,*.cpp,*.yaml,*.yml,*vimrc,.gitignore,*.md :call <SID>StripTrailingWhitespaces()
