@@ -6,5 +6,5 @@ $ ln -sr vimrc ~/.vimrc
 ```
 
 ## Requierements
-- On Manjaro/arch install **awesome-terminal-fonts**
+- On Manjaro/arch install **awesome-terminal-fonts** or **powerline-fonts**
 
