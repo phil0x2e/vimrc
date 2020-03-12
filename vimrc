@@ -14,13 +14,14 @@ Plugin 'VundleVim/Vundle.vim'
 " Vundle plugins
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'rust-lang/rust.vim'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,8 +60,8 @@ set relativenumber
 set tabstop=4
 set shiftwidth=4
 set autoindent
-:set ignorecase
-:set smartcase
+set ignorecase
+set smartcase
 
 nnoremap ,t :NERDTree<CR>
 
