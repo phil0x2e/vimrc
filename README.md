@@ -7,4 +7,5 @@ $ ln -sr vimrc ~/.vimrc
 
 ## Requierements
 - On Manjaro/arch install **awesome-terminal-fonts** or **powerline-fonts**
+- Also install: **ttf-freefont ttf-liberation ttf-droid**
 

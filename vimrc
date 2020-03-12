@@ -64,6 +64,6 @@ set autoindent
 
 nnoremap ,t :NERDTree<CR>
 
-"Nerdtree Arrows not showing.
+"Nerdtree Arrows as + and -
 let g:NERDTreeDirArrowExpandable = "+"
 let g:NERDTreeDirArrowCollapsible = "-"
