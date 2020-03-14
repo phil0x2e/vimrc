@@ -29,7 +29,6 @@ Plugin 'morhetz/gruvbox'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'dracula/vim'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -43,6 +42,8 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" ==================== Plugin settings ====================
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -67,9 +68,6 @@ let g:NERDTreeDirArrowCollapsible = "-"
 " Highlighted yank
 let g:highlightedyank_highlight_duration = 300
 
-" easymotion
-map <C-S> <Plug>(easymotion-prefix)
-
 " ==================== Config ====================
 
 syntax on
@@ -91,16 +89,17 @@ colorscheme gruvbox
 " Enable mouse in normal mode
 " set mouse=n
 
-" ==================== Maps ====================
-" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
+" ==================== Mappings ====================
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy, which is the default
 map Y y$
-
+" <C-S> to start easymotion instead of <leader><leader>
+map <C-S> <Plug>(easymotion-prefix)
+" Start NERDTree with ,t
 nnoremap ,t :NERDTree<CR>
 " Esc to stop highlighting
 nnoremap <Esc> :nohl<CR><C-L>
 
-" Remove trailing whitespaces for specific files
+" Remove trailing whitespaces for specific files on save
 function! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
