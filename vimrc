@@ -21,10 +21,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'morhetz/gruvbox'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'ryanoasis/vim-devicons'
+" Colorschemes
+Plugin 'morhetz/gruvbox'
+Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'dracula/vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,6 +72,7 @@ map <C-S> <Plug>(easymotion-prefix)
 
 " ==================== Config ====================
 
+syntax on
 set nu
 set relativenumber
 set tabstop=4
@@ -83,7 +87,6 @@ set background=dark
 set termguicolors " disable when using urxvt!
 
 colorscheme gruvbox
-syntax on
 
 " Enable mouse in normal mode
 " set mouse=n
@@ -92,6 +95,7 @@ syntax on
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 map Y y$
+
 nnoremap ,t :NERDTree<CR>
 " Esc to stop highlighting
 nnoremap <Esc> :nohl<CR><C-L>
