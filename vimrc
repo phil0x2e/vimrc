@@ -107,3 +107,6 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre *.h,*.c,*.java,*.py,*.rs,*.toml,*.cpp,*.yaml,*.yml,*vimrc,.gitignore,*.md :call <SID>StripTrailingWhitespaces()
+" Make the whitespace remover function accessible via two commands
+command! TrimWhitespace call <SID>StripTrailingWhitespaces()
+command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
