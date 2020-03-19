@@ -1,7 +1,7 @@
 " ########################################
 " #           phil0x2e's vimrc           #
 " ########################################
-" ==================== Vundle ====================
+" ==================== Vundle ==================== {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -45,8 +45,8 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-" ==================== Plugin settings ====================
+" }}}
+" ==================== Plugin settings ==================== {{{
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -70,8 +70,8 @@ let g:NERDTreeDirArrowCollapsible = "-"
 
 " Highlighted yank
 let g:highlightedyank_highlight_duration = 300
-
-" ==================== Config ====================
+" }}}
+" ==================== Config ==================== {{{
 
 syntax on
 set nu
@@ -92,8 +92,8 @@ colorscheme gruvbox
 
 " Enable mouse in normal mode
 " set mouse=n
-
-" ==================== Mappings ====================
+" }}}
+" ==================== Mappings ==================== {{{
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy, which is the default
 map Y y$
 " <C-S> to start easymotion instead of <leader><leader>
@@ -102,7 +102,8 @@ map <C-S> <Plug>(easymotion-prefix)
 nnoremap ,t :NERDTree<CR>
 " Esc to stop highlighting
 nnoremap <Esc> :nohl<CR><C-L>
-" ==================== Extended Settings ====================
+" }}}
+" ==================== Extended Settings ==================== {{{
 " Remove trailing whitespaces for specific files on save
 function! <SID>StripTrailingWhitespaces()
     let l = line(".")
@@ -114,9 +115,10 @@ autocmd BufWritePre *.h,*.c,*.java,*.py,*.rs,*.toml,*.cpp,*.yaml,*.yml,*vimrc,.g
 " Make the whitespace remover function accessible via two commands
 command! TrimWhitespace call <SID>StripTrailingWhitespaces()
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
-" Reload folds if there is a view saved with :mkview
-" To toggle fold use za. To create fold use zf. To delete all folds use zE, to open all folds use zR and to close all folds use ZM
-augroup reload_folds
-  autocmd!
-  autocmd BufWinEnter * silent! loadview
+" Use foldmethod marker on vim files to automatically fold vimrc
+" To toggle fold use za. To open all folds use zR and to close all folds use ZM.
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
 augroup END
+" }}}
