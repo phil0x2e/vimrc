@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Vundle plugins
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'vim-airline/vim-airline'
