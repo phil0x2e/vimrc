@@ -1,3 +1,6 @@
+" ########################################
+" #           phil0x2e's vimrc           #
+" ########################################
 " ==================== Vundle ====================
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -83,6 +86,7 @@ set hlsearch
 set incsearch
 set background=dark
 set termguicolors " disable when using urxvt!
+set foldmethod=manual
 
 colorscheme gruvbox
 
@@ -98,7 +102,7 @@ map <C-S> <Plug>(easymotion-prefix)
 nnoremap ,t :NERDTree<CR>
 " Esc to stop highlighting
 nnoremap <Esc> :nohl<CR><C-L>
-
+" ==================== Extended Settings ====================
 " Remove trailing whitespaces for specific files on save
 function! <SID>StripTrailingWhitespaces()
     let l = line(".")
@@ -110,3 +114,9 @@ autocmd BufWritePre *.h,*.c,*.java,*.py,*.rs,*.toml,*.cpp,*.yaml,*.yml,*vimrc,.g
 " Make the whitespace remover function accessible via two commands
 command! TrimWhitespace call <SID>StripTrailingWhitespaces()
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
+" Reload folds if there is a view saved with :mkview
+" To toggle fold use za. To create fold use zf. To delete all folds use zE, to open all folds use zR and to close all folds use ZM
+augroup reload_folds
+  autocmd!
+  autocmd BufWinEnter * silent! loadview
+augroup END
