@@ -47,7 +47,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " }}}
 " ==================== Plugin settings ==================== {{{
-
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -72,7 +71,6 @@ let g:NERDTreeDirArrowCollapsible = "-"
 let g:highlightedyank_highlight_duration = 300
 " }}}
 " ==================== Config ==================== {{{
-
 syntax on
 set nu
 set relativenumber
@@ -89,9 +87,6 @@ set termguicolors " disable when using urxvt!
 set foldmethod=manual
 
 colorscheme gruvbox
-
-" Enable mouse in normal mode
-" set mouse=n
 " }}}
 " ==================== Mappings ==================== {{{
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy, which is the default
