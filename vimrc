@@ -1,6 +1,6 @@
 "  ____________
 " / phil02e's  \
-" |            |
+" |  awesome   |
 " \   vimrc    /
 "  ------------
 "       \                    / \  //\
@@ -20,6 +20,7 @@
 "                ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
 "                                                                   /.-~
 " ==================== Vundle ==================== {{{
+" -------------------- Vundle begin -------------------- {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -27,8 +28,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
+"call vundle#begin('~/some/path/here') }}}
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -49,7 +49,7 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'morhetz/gruvbox'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'dracula/vim'
-
+" -------------------- Vundle end -------------------- {{{
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -63,7 +63,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" }}}
+" }}} }}}
 " ==================== Plugin settings ==================== {{{
 " Syntastic
 set statusline+=%#warningmsg#
