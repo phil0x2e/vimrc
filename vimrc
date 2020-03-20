@@ -38,6 +38,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'rust-lang/rust.vim'
+Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
@@ -102,7 +103,8 @@ set hlsearch
 set incsearch
 set background=dark
 set termguicolors " disable when using urxvt!
-set foldmethod=manual
+set foldmethod=syntax
+set nofoldenable
 
 colorscheme gruvbox
 " }}}
@@ -133,5 +135,6 @@ command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType vim setlocal foldenable
 augroup END
 " }}}
