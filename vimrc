@@ -106,17 +106,20 @@ set termguicolors " disable when using urxvt!
 set foldmethod=syntax
 set nofoldenable
 
+" \ is hard to reach, so set <leader> to ,
+let mapleader = ","
+
 colorscheme gruvbox
 " }}}
 " ==================== Mappings ==================== {{{
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy, which is the default
 map Y y$
-" <C-S> to start easymotion instead of <leader><leader>
-map <C-S> <Plug>(easymotion-prefix)
-" Start NERDTree with ,t
-nnoremap ,t :NERDTree<CR>
+" Start NERDTree with <leader>t
+nnoremap <leader>t :NERDTree<CR>
 " Esc to stop highlighting
 nnoremap <Esc> :nohl<CR><C-L>
+" Quicksave with <leader>w
+nmap <leader>w :w<cr>
 " }}}
 " ==================== Extended Settings ==================== {{{
 " Remove trailing whitespaces for specific files on save
