@@ -96,6 +96,7 @@ set relativenumber
 set tabstop=4
 set smarttab
 set shiftwidth=4
+set expandtab	" Tabs as spaces
 set autoindent
 set ignorecase
 set smartcase
