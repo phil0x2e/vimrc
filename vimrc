@@ -96,7 +96,7 @@ set relativenumber
 set tabstop=4
 set smarttab
 set shiftwidth=4
-set expandtab	" Tabs as spaces
+set noexpandtab " Use tabs as default for indentation!
 set autoindent
 set ignorecase
 set smartcase
@@ -123,22 +123,29 @@ nnoremap <Esc> :nohl<CR><C-L>
 nmap <leader>w :w<cr>
 " }}}
 " ==================== Extended Settings ==================== {{{
-" Remove trailing whitespaces for specific files on save
 function! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
+	let l = line(".")
+	let c = col(".")
+	%s/\s\+$//e
+	call cursor(l, c)
 endfun
-autocmd BufWritePre *.h,*.c,*.java,*.py,*.rs,*.toml,*.cpp,*.yaml,*.yml,*vimrc,.gitignore,*.md :call <SID>StripTrailingWhitespaces()
 " Make the whitespace remover function accessible via two commands
 command! TrimWhitespace call <SID>StripTrailingWhitespaces()
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
+" }}}
+" ==================== Filetype specific settings ==================== {{{
+" Remove trailing whitespaces for specific files on save
+autocmd BufWritePre *.h,*.c,*.java,*.py,*.rs,*.toml,*.cpp,*.yaml,*.yml,*vimrc,.gitignore,*.md :call <SID>StripTrailingWhitespaces()
 " Use foldmethod marker on vim files to automatically fold vimrc
 " To toggle fold use za. To open all folds use zR and to close all folds use ZM.
 augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-    autocmd FileType vim setlocal foldenable
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
+	autocmd FileType vim setlocal foldenable
 augroup END
-" }}}
+
+augroup filetype_python
+	autocmd!
+	" Indentation according to pep8
+	autocmd FileType python setlocal expandtab sw=4 ts=4
+augroup END
