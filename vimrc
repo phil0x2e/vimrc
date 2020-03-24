@@ -35,6 +35,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Vundle plugins
 Plugin 'preservim/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'vim-syntastic/syntastic'
@@ -132,6 +133,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 " Also start CtrlP with ,p
 nnoremap <leader>p :CtrlP<CR>
+"
+nnoremap <leader>f :CtrlPFunky<CR>
 " Start NERDTree with <leader>t
 nnoremap <leader>t :NERDTree<CR>
 " Esc to stop highlighting
