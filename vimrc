@@ -93,6 +93,10 @@ let NERDTreeHijackNetrw=0
 
 " Ctrl-p
 let g:ctrlp_working_path_mode = 0
+" Ignore those files when searching
+set wildignore+=*.pdf,*.jpeg,*.jpg,*.png,*.tif,*.doc,*.docx,*.ods,*.kdbx,*.kdb
+set wildignore+=*.mp3,*.wav,*.mp4
+set wildignore+=*.zip,*.7z,*.jar,*.tar,*.gz,*.iso,*.lz4,*.exe
 
 " Highlighted yank
 let g:highlightedyank_highlight_duration = 300
