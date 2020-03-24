@@ -135,10 +135,14 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-" Also start CtrlP with ,p
-nnoremap <leader>p :CtrlP<CR>
-"
+" Also start CtrlPMixed with ,p
+nnoremap <leader>p :CtrlPMixed<CR>
+" Start CtrlPFunky
 nnoremap <leader>f :CtrlPFunky<CR>
+" Start CtrlP on Buffers
+nnoremap <leader>b :CtrlPBuffer<CR>
+" Open CtrlPLine
+nnoremap <leader>l :CtrlPLine<CR>
 " Start NERDTree with <leader>t
 nnoremap <leader>t :NERDTree<CR>
 " Esc to stop highlighting
