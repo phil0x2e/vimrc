@@ -33,7 +33,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Vundle plugins
- Plugin 'preservim/nerdtree'
+Plugin 'preservim/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
@@ -85,10 +85,10 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#buffer_nr_show = 1 " Show buffer numbers at the the top
 
 " Nerdtree Arrows as + and -
- let g:NERDTreeDirArrowExpandable = "+"
- let g:NERDTreeDirArrowCollapsible = "-"
- " Don't let NERDTree hijack Netrw, so when using e.g. :e it's opened with netrw
- let NERDTreeHijackNetrw=0
+let g:NERDTreeDirArrowExpandable = "+"
+let g:NERDTreeDirArrowCollapsible = "-"
+" Don't let NERDTree hijack Netrw, so when using e.g. :e it's opened with netrw
+let NERDTreeHijackNetrw=0
 
 " Ctrl-p
 let g:ctrlp_working_path_mode = 0
@@ -131,7 +131,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 " Start NERDTree with <leader>t
- nnoremap <leader>t :NERDTree<CR>
+nnoremap <leader>t :NERDTree<CR>
 " Esc to stop highlighting
 nnoremap <Esc> :nohl<CR><C-L>
 " Quicksave with <leader>w
