@@ -149,3 +149,9 @@ augroup filetype_python
 	" Indentation according to pep8
 	autocmd FileType python setlocal expandtab sw=4 ts=4
 augroup END
+
+augroup filetype_sh
+	autocmd!
+	" display tabs as two spaces
+	autocmd FileType sh setlocal noexpandtab sw=2 ts=2
+augroup END
