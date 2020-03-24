@@ -115,6 +115,9 @@ set nofoldenable
 
 " \ is hard to reach, so set <leader> to ,
 let mapleader = ","
+" netrw hide dotfiles as default, toggle with gh
+let ghregex='\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_list_hide=ghregex
 
 colorscheme gruvbox
 " }}}
