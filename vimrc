@@ -33,6 +33,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Vundle plugins
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'preservim/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
