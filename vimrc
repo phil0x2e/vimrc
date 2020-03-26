@@ -43,7 +43,6 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'machakann/vim-highlightedyank'
@@ -51,8 +50,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ryanoasis/vim-devicons'
 " Colorschemes
 Plugin 'morhetz/gruvbox'
-Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'dracula/vim'
+"Plugin 'drewtempelmeyer/palenight.vim'
+"Plugin 'dracula/vim'
 " -------------------- Vundle end -------------------- {{{
 call vundle#end()            " required
 filetype plugin indent on    " required
