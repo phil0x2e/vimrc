@@ -109,28 +109,30 @@ function! Branch()
 	let head = FugitiveHead()
 	if head != ''
 		return '⎇ ' . head
+	else
+		return ''
 	endif
 endfun
 
 let g:lightline = {
-	\ 'colorscheme': 'gruvbox',
-	\ 'active': {
-	\   'left': [ [ 'mode', 'paste' ],
-	\             [ 'gitbranch', 'readonly', 'filename', 'modified'] ],
-	\ 'right': [ ['trailing_whites'], ['lineinfo' ],
-	\              [ 'percent' ],
-	\              [ 'fileformat', 'fileencoding', 'filetype'] ]
-	\ },
-	\ 'component_function': {
-	\   'gitbranch': 'Branch',
+	\'colorscheme': 'gruvbox',
+	\'active': {
+	\    'left': [ [ 'mode', 'paste' ],
+	\        [ 'gitbranch', 'readonly', 'filename', 'modified'] ],
+	\    'right': [ ['trailing_whites'], ['lineinfo' ],
+	\        [ 'percent' ],
+	\        [ 'fileformat', 'fileencoding', 'filetype'] ]
 	\},
-	\ 'component_expand': {
-	\   'trailing_whites': 'Trailing_whites'
+	\'component_function': {
+	\    'gitbranch': 'Branch',
 	\},
-	\ 'component_type': {
+	\'component_expand': {
+	\    'trailing_whites': 'Trailing_whites',
+	\},
+	\'component_type': {
     \    'trailing_whites': 'warning'
-    \ }
-	\}
+    \}
+\}
 "reevaluate component_expand
 autocmd BufWritePost,FileWritePost * call lightline#update()
 " }}}
