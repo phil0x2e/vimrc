@@ -42,7 +42,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-airline/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'machakann/vim-highlightedyank'
@@ -79,12 +79,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 
-" vim-airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline#extensions#tabline#buffer_nr_show = 1 " Show buffer numbers at the the top
-
 " Nerdtree Arrows as + and -
 let g:NERDTreeDirArrowExpandable = "+"
 let g:NERDTreeDirArrowCollapsible = "-"
@@ -100,6 +94,41 @@ set wildignore+=*.zip,*.7z,*.jar,*.tar,*.gz,*.iso,*.lz4,*.exe
 
 " Highlighted yank
 let g:highlightedyank_highlight_duration = 300
+
+" lightline
+function! Has_trailing_whites()
+	let pos = search('\s$', 'nw')
+	if pos>0
+		return '>>Trailing[' . pos . ']'
+	else
+		return ''
+	endif
+endfun
+
+function! Branch()
+	let head = FugitiveHead()
+	if head != ''
+		return '⎇ ' . head
+	endif
+endfun
+
+let g:lightline = {
+	\ 'colorscheme': 'gruvbox',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'gitbranch', 'readonly', 'filename', 'modified'] ],
+	\ 'right': [ ['trailing_whites'], ['lineinfo' ],
+	\              [ 'percent' ],
+	\              [ 'fileformat', 'fileencoding', 'filetype'] ]
+	\ },
+	\ 'component_function': {
+	\   'gitbranch': 'Branch',
+	\   'trailing_whites': 'Has_trailing_whites'
+	\},
+	\ 'component_type': {
+    \    'trailing_whites': 'error'
+    \ }
+	\}
 " }}}
 " ==================== Config ==================== {{{
 syntax on
