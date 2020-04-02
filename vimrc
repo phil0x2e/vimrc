@@ -96,10 +96,10 @@ set wildignore+=*.zip,*.7z,*.jar,*.tar,*.gz,*.iso,*.lz4,*.exe
 let g:highlightedyank_highlight_duration = 300
 
 " lightline
-function! Has_trailing_whites()
+function! Trailing_whites()
 	let pos = search('\s$', 'nw')
 	if pos>0
-		return '>>Trailing[' . pos . ']'
+		return '»Trailing[' . pos . ']'
 	else
 		return ''
 	endif
@@ -123,12 +123,16 @@ let g:lightline = {
 	\ },
 	\ 'component_function': {
 	\   'gitbranch': 'Branch',
-	\   'trailing_whites': 'Has_trailing_whites'
+	\},
+	\ 'component_expand': {
+	\   'trailing_whites': 'Trailing_whites'
 	\},
 	\ 'component_type': {
-    \    'trailing_whites': 'error'
+    \    'trailing_whites': 'warning'
     \ }
 	\}
+"reevaluate component_expand
+autocmd BufWritePost,FileWritePost * call lightline#update()
 " }}}
 " ==================== Config ==================== {{{
 syntax on
@@ -211,4 +215,10 @@ augroup filetype_sh
 	autocmd!
 	" display tabs as two spaces
 	autocmd FileType sh setlocal noexpandtab sw=2 ts=2
+augroup END
+
+augroup filetype_yaml
+	autocmd!
+	" Indentation two spaces
+	autocmd FileType yaml setlocal expandtab sw=2 ts=2
 augroup END
