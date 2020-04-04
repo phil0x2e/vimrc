@@ -160,6 +160,7 @@ set background=dark
 set termguicolors " disable when using urxvt!
 set foldmethod=syntax
 set nofoldenable
+set noshowmode " because lightline already shows mode
 
 " \ is hard to reach, so set <leader> to ,
 let mapleader = ","
