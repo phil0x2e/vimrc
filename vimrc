@@ -19,57 +19,32 @@
 "              ///.----..>        \             _ -~             `.  ^-`  ^-_
 "                ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
 "                                                                   /.-~
-" ==================== Vundle ==================== {{{
-" -------------------- Vundle begin -------------------- {{{
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" ==================== Vim Plug ==================== {{{
+call plug#begin('~/.vim/plugged')
+" vim-plug plugins
+Plug 'ycm-core/YouCompleteMe'
+"Plug 'neoclide/coc.nvim'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here') }}}
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Vundle plugins
-Plugin 'ycm-core/YouCompleteMe'
-"Plugin 'neoclide/coc.nvim'
-
-Plugin 'preservim/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mhinz/vim-signify'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'rust-lang/rust.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'itchyny/lightline.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'machakann/vim-highlightedyank'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
+Plug 'vim-syntastic/syntastic'
+Plug 'rust-lang/rust.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'machakann/vim-highlightedyank'
+Plug 'easymotion/vim-easymotion'
+Plug 'ryanoasis/vim-devicons'
 " Colorschemes
-Plugin 'morhetz/gruvbox'
-"Plugin 'drewtempelmeyer/palenight.vim'
-"Plugin 'dracula/vim'
-" -------------------- Vundle end -------------------- {{{
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-" }}} }}}
-" ==================== Plugin settings ==================== {{{
+Plug 'morhetz/gruvbox'
+"Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'dracula/vim'
+call plug#end() "}}}
+" ==================== Plug settings ==================== {{{
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

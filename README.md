@@ -1,24 +1,25 @@
-# My vimrc
+# My vimrc for neovim
 Just clone and link to ~/.vimrc:
 
 ```
 $ ln -sr vimrc ~/.vimrc
 ```
 
-Install vundle with:
+Install vim-plug for neovim with:
 ```
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 Then in vim to install Plugins:
 ```
-:PluginInstall
+:PlugInstall
 ```
 
-To install deoplete Plugin make sure that "Python 3 provider" is installed in nvim, if you're not sure simply call `:checkhealth` inside of nvim and follow the instructions.
-Then run `:UpdateRemotePlugins` in nvim.
-
-For Rust autocompletion install racer and for python autocompletion install jedi.
+To install YouCompleteMe run
+```
+cd ~/.vim/plugged/YouCompleteMe && python3 install.py --all
+```
 
 
 ## Requirements
