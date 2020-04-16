@@ -33,9 +33,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Vundle plugins
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'racer-rust/vim-racer'
-Plugin 'deoplete-plugins/deoplete-jedi'
+Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'neoclide/coc.nvim'
 
 Plugin 'preservim/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -98,9 +97,9 @@ set wildignore+=*.zip,*.7z,*.jar,*.tar,*.gz,*.iso,*.lz4,*.exe
 " Highlighted yank
 let g:highlightedyank_highlight_duration = 300
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-
+" ycm
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " lightline
 function! Trailing_whites()
