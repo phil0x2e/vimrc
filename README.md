@@ -16,11 +16,7 @@ Then in vim to install Plugins:
 :PlugInstall
 ```
 
-To install YouCompleteMe run
-```
-cd ~/.vim/plugged/YouCompleteMe && python3 install.py --all
-```
-
+To install auto completion support for rust run `:CocInstall coc-rls` for python `:CocInstall coc-python` etc.
 
 ## Requirements
 - On Manjaro/arch install **awesome-terminal-fonts** or **powerline-fonts**
