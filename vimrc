@@ -113,17 +113,23 @@ function! Branch()
 	endif
 endfun
 
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
 let g:lightline = {
 	\'colorscheme': 'gruvbox',
 	\'active': {
 	\    'left': [ [ 'mode', 'paste' ],
-	\        [ 'gitbranch', 'readonly', 'filename', 'modified'] ],
+	\        ['gitbranch', 'readonly', 'filename', 'modified'], ['cocstatus', 'currentfunction'] ],
 	\    'right': [ ['trailing_whites'], ['lineinfo' ],
 	\        [ 'percent' ],
 	\        [ 'fileformat', 'fileencoding', 'filetype'] ]
 	\},
 	\'component_function': {
 	\    'gitbranch': 'Branch',
+	\    'cocstatus': 'coc#status',
+  	\    'currentfunction': 'CocCurrentFunction'
 	\},
 	\'component_expand': {
 	\    'trailing_whites': 'Trailing_whites',
