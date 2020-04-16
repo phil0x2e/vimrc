@@ -44,7 +44,7 @@ Plug 'morhetz/gruvbox'
 "Plug 'drewtempelmeyer/palenight.vim'
 "Plug 'dracula/vim'
 call plug#end() "}}}
-" ==================== Plug settings ==================== {{{
+" ==================== Plugin settings ==================== {{{
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -121,7 +121,7 @@ let g:lightline = {
 	\'colorscheme': 'gruvbox',
 	\'active': {
 	\    'left': [ [ 'mode', 'paste' ],
-	\        ['gitbranch', 'readonly', 'filename', 'modified'], ['cocstatus', 'currentfunction'] ],
+	\        ['gitbranch', 'readonly', 'filename', 'modified'], ['cocstatus'] ],
 	\    'right': [ ['trailing_whites'], ['lineinfo' ],
 	\        [ 'percent' ],
 	\        [ 'fileformat', 'fileencoding', 'filetype'] ]
