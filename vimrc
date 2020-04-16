@@ -95,6 +95,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " lightline
+set laststatus=2
 function! Trailing_whites()
 	let pos = search('\s$', 'nw')
 	if pos>0
@@ -187,7 +188,7 @@ nnoremap <leader>l :CtrlPLine<CR>
 " Start NERDTree with <leader>t
 nnoremap <leader>t :NERDTree<CR>
 " Esc to stop highlighting
-nnoremap <Esc> :nohl<CR><C-L>
+nnoremap <silent> <Esc><Esc> :nohl<CR>
 " Quicksave with <leader>w
 nmap <leader>w :w<cr>
 " }}}
