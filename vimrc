@@ -39,6 +39,7 @@ Plug 'tpope/vim-repeat'
 Plug 'machakann/vim-highlightedyank'
 Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
+Plug 'vimwiki/vimwiki'
 " Colorschemes
 Plug 'morhetz/gruvbox'
 "Plug 'drewtempelmeyer/palenight.vim'
@@ -94,6 +95,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" vimwiki
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/'}]
+
 " lightline
 set laststatus=2
 function! Trailing_whites()
@@ -143,6 +147,8 @@ let g:lightline = {
 autocmd BufWritePost,FileWritePost * call lightline#update()
 " }}}
 " ==================== Config ==================== {{{
+set nocompatible
+filetype plugin on
 syntax on
 set nu
 set relativenumber
