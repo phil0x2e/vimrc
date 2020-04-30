@@ -166,6 +166,8 @@ set termguicolors " disable when using urxvt!
 set foldmethod=syntax
 set nofoldenable
 set noshowmode " because lightline already shows mode
+set spell
+set spelllang=en_us,de_de
 
 " \ is hard to reach, so set <leader> to ,
 let mapleader = ","
