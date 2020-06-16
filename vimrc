@@ -40,13 +40,15 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vimwiki/vimwiki'
+
+Plug 'peitalin/vim-jsx-typescript'
 " Colorschemes
 Plug 'morhetz/gruvbox'
-"Plug 'drewtempelmeyer/palenight.vim'
 "Plug 'dracula/vim'
 call plug#end() "}}}
 " ==================== Plugin settings ==================== {{{
 " Syntastic
+set nocompatible
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -65,10 +67,12 @@ let NERDTreeHijackNetrw=0
 
 " Ctrl-p
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_max_files=0
 " Ignore those files when searching
 set wildignore+=*.pdf,*.jpeg,*.jpg,*.png,*.tif,*.doc,*.docx,*.ods,*.kdbx,*.kdb
 set wildignore+=*.mp3,*.wav,*.mp4
 set wildignore+=*.zip,*.7z,*.jar,*.tar,*.gz,*.iso,*.lz4,*.exe
+set wildignore+=node_modules,*venv*
 
 " Highlighted yank
 let g:highlightedyank_highlight_duration = 300
@@ -147,7 +151,6 @@ let g:lightline = {
 autocmd BufWritePost,FileWritePost * call lightline#update()
 " }}}
 " ==================== Config ==================== {{{
-set nocompatible
 filetype plugin on
 syntax on
 set nu
