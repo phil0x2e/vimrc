@@ -242,3 +242,15 @@ augroup filetype_yaml
 	" Indentation two spaces
 	autocmd FileType yaml setlocal expandtab sw=2 ts=2
 augroup END
+
+augroup filetype_php
+	autocmd!
+	" Indentation according to pep8
+	autocmd FileType php setlocal expandtab sw=4 ts=4
+augroup END
+
+augroup filetype_tsx
+	autocmd!
+	" Indentation two spaces
+	autocmd FileType typescript.tsx setlocal expandtab sw=2 ts=2
+augroup END
