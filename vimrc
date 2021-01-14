@@ -23,9 +23,9 @@
 call plug#begin('~/.vim/plugged')
 " vim-plug plugins
 "Plug 'ycm-core/YouCompleteMe'
+"Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'tpope/vim-fugitive'
@@ -95,9 +95,7 @@ endfunction
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gh :call CocActionAsync('doHover')<cr>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/'}]
@@ -234,7 +232,7 @@ augroup END
 augroup filetype_sh
 	autocmd!
 	" display tabs as two spaces
-	autocmd FileType sh setlocal noexpandtab sw=2 ts=2
+	autocmd FileType sh setlocal expandtab sw=4 ts=4
 augroup END
 
 augroup filetype_yaml
@@ -253,4 +251,10 @@ augroup filetype_tsx
 	autocmd!
 	" Indentation two spaces
 	autocmd FileType typescript.tsx setlocal expandtab sw=2 ts=2
+augroup END
+
+augroup filetype_css
+	autocmd!
+	" Indentation two spaces
+	autocmd FileType css setlocal expandtab sw=2 ts=2
 augroup END
