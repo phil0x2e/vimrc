@@ -40,11 +40,12 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vimwiki/vimwiki'
+Plug 'unblevable/quick-scope'
 
 Plug 'peitalin/vim-jsx-typescript'
 " Colorschemes
 Plug 'morhetz/gruvbox'
-"Plug 'dracula/vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end() "}}}
 " ==================== Plugin settings ==================== {{{
 " Syntastic
@@ -170,8 +171,8 @@ set noshowmode " because lightline already shows mode
 set spell
 set spelllang=en_us,de_de
 
-" \ is hard to reach, so set <leader> to ,
-let mapleader = ","
+" \ is hard to reach, so set <leader> to -
+let mapleader = "-"
 " netrw hide dotfiles as default, toggle with gh
 let ghregex='\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_list_hide=ghregex
