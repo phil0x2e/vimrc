@@ -23,7 +23,6 @@
 call plug#begin('~/.vim/plugged')
 " vim-plug plugins
 "Plug 'ycm-core/YouCompleteMe'
-"Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'ctrlpvim/ctrlp.vim'
@@ -41,6 +40,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vimwiki/vimwiki'
 Plug 'unblevable/quick-scope'
+Plug 'luochen1990/rainbow'
 
 Plug 'peitalin/vim-jsx-typescript'
 " Colorschemes
@@ -48,6 +48,8 @@ Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end() "}}}
 " ==================== Plugin settings ==================== {{{
+" Rainbow
+let g:rainbow_active = 1
 " Syntastic
 set nocompatible
 set statusline+=%#warningmsg#
@@ -59,12 +61,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
-
-" Nerdtree Arrows as + and -
-let g:NERDTreeDirArrowExpandable = "+"
-let g:NERDTreeDirArrowCollapsible = "-"
-" Don't let NERDTree hijack Netrw, so when using e.g. :e it's opened with netrw
-let NERDTreeHijackNetrw=0
 
 " Ctrl-p
 let g:ctrlp_working_path_mode = 0
@@ -195,8 +191,6 @@ nnoremap <leader>f :CtrlPFunky<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 " Open CtrlPLine
 nnoremap <leader>l :CtrlPLine<CR>
-" Start NERDTree with <leader>t
-nnoremap <leader>t :NERDTree<CR>
 " Esc to stop highlighting
 nnoremap <silent> <Esc><Esc> :nohl<CR>
 " Quicksave with <leader>w
